@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BI 看板 · 天猫调味品运营</title>
+  <script src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <style>
+    :root {
+      --charcoal: #36454F;
+      --charcoal-soft: #5F7C8A;
+      --line: #E3E9EC;
+      --bg: #F7F9FA;
+      --card: #FFFFFF;
+      --text: #2C2C2A;
+      --muted: #888780;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--charcoal);
+      color: #fff;
+      padding: 20px 28px;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    header h1 { font-size: 18px; font-weight: 600; }
+    header .sub { font-size: 13px; opacity: 0.75; }
+    #banner {
+      display: none;
+      background: #FAEEDA;
+      color: #633806;
+      font-size: 13px;
+      padding: 10px 28px;
+      border-bottom: 1px solid #FAC775;
+    }
+    main { padding: 24px 28px; max-width: 1280px; margin: 0 auto; }
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+    .kpi {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px 20px;
+    }
+    .kpi .label { font-size: 13px; color: var(--muted); }
+    .kpi .value { font-size: 28px; font-weight: 600; color: var(--charcoal); margin-top: 6px; }
+    .kpi .unit { font-size: 14px; font-weight: 400; color: var(--muted); margin-left: 4px; }
+    .chart-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 16px;
+    }
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .panel h2 { font-size: 14px; font-weight: 600; color: var(--charcoal); margin-bottom: 10px; }
+    .chart { width: 100%; height: 320px; }
+    footer { text-align: center; color: var(--muted); font-size: 12px; padding: 24px; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>天猫调味品 · 运营 BI 看板</h1>
+    <span class="sub" id="updated">数据更新时间：—</span>
+  </header>
+  <div id="banner"></div>
+  <main>
+    <section class="kpi-grid" id="kpiGrid"></section>
+    <section class="chart-grid">
+      <div class="panel">
+        <h2>月度销售额与利润</h2>
+        <div class="chart" id="chartMonthly"></div>
+      </div>
+      <div class="panel">
+        <h2>品类销售占比</h2>
+        <div class="chart" id="chartCategory"></div>
+      </div>
+      <div class="panel">
+        <h2>区域销售分布</h2>
+        <div class="chart" id="chartRegion"></div>
+      </div>
+    </section>
+  </main>
+  <footer>数据源：GitHub 仓库 data/sales.json · 前端 ECharts 渲染 · 托管 GitHub Pages</footer>
+  <script src="app.js"></script>
+</body>
+</html>

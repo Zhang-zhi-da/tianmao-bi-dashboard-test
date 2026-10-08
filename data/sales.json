@@ -1,0 +1,31 @@
+{
+  "updated": "2026-10-08",
+  "monthly": [
+    { "month": "1月", "sales": 128, "profit": 32 },
+    { "month": "2月", "sales": 96,  "profit": 24 },
+    { "month": "3月", "sales": 145, "profit": 38 },
+    { "month": "4月", "sales": 162, "profit": 44 },
+    { "month": "5月", "sales": 178, "profit": 49 },
+    { "month": "6月", "sales": 203, "profit": 57 },
+    { "month": "7月", "sales": 191, "profit": 52 },
+    { "month": "8月", "sales": 214, "profit": 61 },
+    { "month": "9月", "sales": 236, "profit": 68 }
+  ],
+  "categories": [
+    { "name": "酱油",       "value": 420 },
+    { "name": "食醋",       "value": 260 },
+    { "name": "辣椒酱",     "value": 310 },
+    { "name": "味精/鸡精",  "value": 180 },
+    { "name": "复合调料",   "value": 240 },
+    { "name": "其他",       "value": 90  }
+  ],
+  "regions": [
+    { "name": "华东", "value": 480 },
+    { "name": "华南", "value": 360 },
+    { "name": "华北", "value": 300 },
+    { "name": "西南", "value": 210 },
+    { "name": "华中", "value": 190 },
+    { "name": "东北", "value": 120 },
+    { "name": "西北", "value": 90  }
+  ]
+}
